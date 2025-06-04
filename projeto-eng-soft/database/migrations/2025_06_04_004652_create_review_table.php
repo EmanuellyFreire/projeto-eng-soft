@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->id();
+            $table->integer('nota');
+            $table->text('texto');
             $table->timestamps();
         });
     }
