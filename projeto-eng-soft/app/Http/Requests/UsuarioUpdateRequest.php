@@ -22,11 +22,9 @@ class UsuarioUpdateRequest extends FormRequest
     public function rules(): array
     { // protected $fillable = ['id','nome', 'email','senha' ];
         return [
-            'name'=> 'sometimes|required|string|max:255',
-            'price'=>'sometimes|required|numeric|min:0',
-            'description'=>'sometimes|required|string|max:1024',
-            'category_id'=>'sometimes|required|exists:categories,id',
-            'company_id'=>'sometimes|required|exists:companies,id'
+            'nome'=> 'sometimes|required|string|max:255',
+            'email'=> 'sometimes|required|string|max:255',
+            'senha'=> 'sometimes|required|string|max:255',
         ];
     }
 }

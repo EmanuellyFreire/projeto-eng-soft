@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\GeneroResource;
 
-class UsuarioResource extends JsonResource
+class LivroResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
