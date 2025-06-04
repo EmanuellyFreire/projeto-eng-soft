@@ -13,11 +13,11 @@ class AutorResource extends JsonResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    { //    protected $fillable = ['id','nome','dataNascimento','biografia'];
+    { //    protected $fillable = ['id','nome','data_nascimento','biografia'];
         return [
             'id' => $this->id,
             'nome' => $this->nome,
-            'dataNascimento' => $this->dataNascimento,
+            'data_nascimento' => $this->data_nascimento,
             'biografia'=> $this->biografia,
         ];
     }

@@ -33,16 +33,16 @@ class AutorController extends Controller
         return new AutorResource($autor);
     }
 
-    public function store(AutorResource $request)
+    public function store(AutorStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $autor = $this->autorService->store($data);
 
         return new AutorResource($autor);
     }
 
     public function update(int $id, AutorUpdateRequest $request){
-        $data = $reqest->validated();
+        $data = $request->validated();
         try{
             $autor = $this->autorService->update($id, $data);
         }catch(ModelNotFoundException $e){

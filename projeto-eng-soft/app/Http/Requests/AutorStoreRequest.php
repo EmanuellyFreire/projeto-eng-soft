@@ -20,10 +20,10 @@ class AutorStoreRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    { //  protected $fillable = ['id','nome','dataNascimento','biografia'];
+    { //  protected $fillable = ['id','nome','data_nascimento','biografia'];
         return [
            'nome'=> 'required|string|max:255',
-           'dataNascimento'=>'required|date',
+           'data_nascimento'=>'required|date',
            'biografia'=>'required|string|max:1024',
         ];
     }

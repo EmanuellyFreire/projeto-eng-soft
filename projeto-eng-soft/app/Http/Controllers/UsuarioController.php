@@ -33,16 +33,16 @@ class UsuarioController extends Controller
         return new UsuarioResource($usuario);
     }
 
-    public function store(UsuarioResource $request)
+    public function store(UsuarioStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $usuario = $this->usuarioService->store($data);
 
         return new UsuarioResource($usuario);
     }
 
     public function update(int $id, UsuarioUpdateRequest $request){
-        $data = $reqest->validated();
+        $data = $request->validated();
         try{
             $usuario = $this->usuarioService->update($id, $data);
         }catch(ModelNotFoundException $e){

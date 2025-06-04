@@ -33,16 +33,16 @@ class ReviewController extends Controller
         return new ReviewResource($review);
     }
 
-    public function store(ReviewResource $request)
+    public function store(ReviewStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $review = $this->reviewService->store($data);
 
         return new ReviewResource($review);
     }
 
     public function update(int $id, ReviewUpdateRequest $request){
-        $data = $reqest->validated();
+        $data = $request->validated();
         try{
             $review = $this->reviewService->update($id, $data);
         }catch(ModelNotFoundException $e){

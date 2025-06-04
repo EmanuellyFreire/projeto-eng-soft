@@ -8,7 +8,7 @@ class Autor extends Model
 {
     //
     protected $table = 'autor';
-    protected $fillable = ['id','nome','dataNascimento','biografia'];
+    protected $fillable = ['id','nome','data_nascimento','biografia'];
 
     public function livro()
         {

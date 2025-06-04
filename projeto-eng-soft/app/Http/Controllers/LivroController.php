@@ -33,16 +33,16 @@ class LivroController extends Controller
         return new LivroResource($livro);
     }
 
-    public function store(LivroResource $request)
+    public function store(LivroStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $livro = $this->livroService->store($data);
 
         return new LivroResource($livro);
     }
 
     public function update(int $id, LivroUpdateRequest $request){
-        $data = $reqest->validated();
+        $data = $request->validated();
         try{
             $livro = $this->livroService->update($id, $data);
         }catch(ModelNotFoundException $e){

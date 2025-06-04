@@ -33,16 +33,16 @@ class GeneroController extends Controller
         return new GeneroResource($genero);
     }
 
-    public function store(GeneroResource $request)
+    public function store(GeneroStoreRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $genero = $this->generoService->store($data);
 
         return new GeneroResource($genero);
     }
 
     public function update(int $id, GeneroUpdateRequest $request){
-        $data = $reqest->validated();
+        $data = $request->validated();
         try{
             $genero = $this->generoService->update($id, $data);
         }catch(ModelNotFoundException $e){
