@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UsuarioUpdateRequest extends FormRequest
+class LivroUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,13 +20,12 @@ class UsuarioUpdateRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    { // protected $fillable = ['id','nome', 'email','senha' ];
+    { //protected $fillable = ['id','titulo','sinopse','autor_id','genero_id'];
         return [
-            'name'=> 'sometimes|required|string|max:255',
-            'price'=>'sometimes|required|numeric|min:0',
-            'description'=>'sometimes|required|string|max:1024',
-            'category_id'=>'sometimes|required|exists:categories,id',
-            'company_id'=>'sometimes|required|exists:companies,id'
+            'titulo'=> 'sometimes|required|string|max:255',
+            'sinopse'=>'sometimes|required|string|max:1024',
+            'autor_id'=>'sometimes|required|exists:autor,id',
+            'genero_id'=>'sometimes|required|exists:genero,id'
         ];
     }
 }

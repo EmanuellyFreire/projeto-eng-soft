@@ -14,12 +14,12 @@ class UsuarioResource extends JsonResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    { // protected $fillable = ['id','nome', 'email','senha' ];
+    { //    protected $fillable = ['id','nome','dataNascimento','biografia'];
         return [
             'id' => $this->id,
             'nome' => $this->nome,
-            'email' => $this->email,
-            'senha'=> $this->senha,
+            'dataNascimento' => $this->dataNascimento,
+            'biografia'=> $this->biografia,
         ];
     }
 }

@@ -20,13 +20,11 @@ class UsuarioStoreRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
+    { // protected $fillable = ['id','nome', 'email','senha' ];
         return [
-           'nome'=> 'required|string|max:255',
-           'price'=>'required|numeric|min:0',
-           'description'=>'required|string|max:1024',
-           'category_id'=>'required|exists:categories,id',
-           'company_id'=>'required|exists:companies,id'
+            'nome'=> 'required|string|max:255',
+            'email'=> 'required|string|max:255',
+            'senha'=> 'required|string|max:255',
         ];
     }
 }
