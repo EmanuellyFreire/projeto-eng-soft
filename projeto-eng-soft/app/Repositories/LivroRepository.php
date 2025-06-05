@@ -29,5 +29,28 @@ class LivroRepository
         $livro->delete();
         return $livro;
     }
-    
+
+    public function getReviews(int $livroId)
+    {
+        $livro = Livro::findOrFail($livroId);
+        return $livro->review;
+    }
+
+        public function getWithRelations()
+    {
+        return Livro::with(['autor', 'genero', 'review'])->get();
+    }
+
+    public function getByAutorId($id)
+    {
+        return Livro::where('autor_id', $id)->get();
+    }
+
+    public function getByGeneroId($id)
+    {
+        return Livro::where('genero_id', $id)->get();
+    }
+
+
+
 }

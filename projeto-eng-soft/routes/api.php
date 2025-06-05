@@ -39,6 +39,12 @@ Route::controller(LivroController::class)->group( function (){
     Route::post('/livro', 'store');
     Route::patch('/livro/{id}', 'update');
     Route::delete('/livro/{id}', 'delete');
+    Route::get('/livro/by-autor/{id}', 'getByAutorId');
+    Route::get('/livro/by-genero/{id}', 'getByGeneroId');
+    
+    
+    //Route::get('/livros/{id}/reviews', 'reviews');
+    //Route::get('/livros-completos', 'completos');
 });
 
 Route::controller(ReviewController::class)->group( function (){
@@ -47,6 +53,9 @@ Route::controller(ReviewController::class)->group( function (){
     Route::post('/review', 'store');
     Route::patch('/review/{id}', 'update');
     Route::delete('/review/{id}', 'delete');
+    Route::get('/review/by-livro/{id}', 'getByLivroId');
+    Route::get('/review/by-usuario/{id}', 'getByUsuarioId');
+    
 });
 
 Route::controller(UsuarioController::class)->group( function (){

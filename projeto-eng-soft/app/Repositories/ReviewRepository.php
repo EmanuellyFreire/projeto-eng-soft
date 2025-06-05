@@ -30,4 +30,14 @@ class ReviewRepository
         return $review;
     }
     
+    public function getByLivroId($id)
+    {
+        return Review::where('livro_id', $id)->get();
+    }
+
+        public function getByUsuarioId($id)
+    {
+        return Review::where('usuario_id', $id)->get();
+    }
+
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\GeneroResource;
+use App\Http\Resources\ReviewResource;
 
 class LivroResource extends JsonResource
 {
@@ -20,8 +21,10 @@ class LivroResource extends JsonResource
             'id' => $this->id,
             'titulo' => $this->titulo,
             'sinopse' => $this->sinopse,
-            'autor_id' => new AutorResource($this->whenLoaded('autor_id')),
-            'genero_id' => new GeneroResource($this->whenLoaded('genero_id'))
+            'genero' => $this->genero->nome ?? null,
+            'autor' => $this->autor->nome ?? null,
+            'reviews' => ReviewResource::collection($this->whenLoaded('reviews')),
+            
         ];
     }
 }

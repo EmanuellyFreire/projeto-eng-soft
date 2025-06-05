@@ -35,4 +35,14 @@ class ReviewService
         return $this->reviewRepository->delete($id);
     }
 
+    public function getByLivroId(int $id){
+        return $this->reviewRepository->getByLivroId($id);
+    }
+
+        public function getByUsuarioId(int $id){
+        return $this->reviewRepository->getByUsuarioId($id);
+    }
+
+    
+
 }

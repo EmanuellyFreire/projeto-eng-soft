@@ -20,8 +20,8 @@ class ReviewResource extends JsonResource
             'id' => $this->id,
             'nota' => $this->nota,
             'texto' => $this->texto,
-            'usuario_id' => new UsuarioResource($this->whenLoaded('usuario_id')),
-            'livro_id' => new LivroResource($this->whenLoaded('usuario_id'))
+            'usuario' => $this->usuario->nome ?? null,
+            'livro' => new LivroResource($this->whenLoaded('livro'))
         ];
     }
 }

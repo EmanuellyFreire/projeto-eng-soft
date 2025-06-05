@@ -35,4 +35,23 @@ class LivroService
         return $this->livroRepository->delete($id);
     }
 
+    public function getReviews(int $livroId)
+    {
+        return $this->livroRepository->getReviews($id);
+    }
+
+    public function getWithRelations()
+    {
+        return $this->livroRepository->getWithRelations();
+    }
+
+        public function getByAutorId(int $id){
+        return $this->livroRepository->getByAutorId($id);
+    }
+
+            public function getByGeneroId(int $id){
+        return $this->livroRepository->getByGeneroId($id);
+    }
+
+
 }

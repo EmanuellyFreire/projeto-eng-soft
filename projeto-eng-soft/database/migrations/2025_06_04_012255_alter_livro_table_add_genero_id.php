@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::table('livro', function (Blueprint $table) {
             $table->unsignedBigInteger( "genero_id" )->nullable();
-            $table->foreign("genero_id" )->references("id")->on("genero");
+            $table->foreign("genero_id" )->references("id")->on("genero")->onDelete('cascade');
         });
     }
 

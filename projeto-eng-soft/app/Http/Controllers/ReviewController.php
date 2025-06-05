@@ -60,6 +60,21 @@ class ReviewController extends Controller
         return new ReviewResource($review);
     }
 
+
+    public function getByLivroId(int $id)
+    {
+        $reviews = $this->reviewService->getByLivroId($id);
+        return ReviewResource::collection($reviews);
+    }
+
+        public function getByUsuarioId(int $id)
+    {
+        $reviews = $this->reviewService->getByUsuarioId($id);
+        return ReviewResource::collection($reviews);
+    }
+
+    
+
     // public function getWithCategory(){
     //     $reviews = $this->reviewService->getWithCategory();
     //     return ReviewResource::collection($reviews);
